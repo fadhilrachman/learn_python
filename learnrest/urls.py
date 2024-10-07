@@ -41,11 +41,11 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('content/',include('content.urls')),
     path('transaction/',include('transaction.urls')),
-    # path('auth/', include('admin_account.urls')),
+    path('auth/', include('authentication.urls')), 
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),  # URL untuk Swagger UI
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),  # URL untuk ReDoc
 ]
-urlpatterns += [
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-]
+# urlpatterns += [
+#     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+#     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+# ]
